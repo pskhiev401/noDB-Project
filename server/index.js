@@ -1,12 +1,16 @@
 const express = require ('express');
+    bodyParser = require ('body-parser');
+    shipCtlr = require ('./controllers/ship_controllers');
     app = express ();
     port = 3001;
-    bodyParser = require ('body-parser'),
-    shipCtlr = require ('./controllers/ship_controllers')
-
 
 app.use(bodyParser.json() );
-app.get('/api/ships', shipCtlr.getLaunches) 
+
+// ------------ GET CRUD ------------
+app.get('/api/ships', shipCtlr.getLaunches)
+
+app.post('/api/ships/', shipCtlr.addFaves)
+app.get('/api/favorites/', shipCtlr.getFavorites)
 
 
 app.listen(port, () => { 
