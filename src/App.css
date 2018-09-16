@@ -1,14 +1,17 @@
-.App {
-  text-align: center;
+.App-header{
+	text-align: center;
+	background: peru;
+	color: whitesmoke;
 }
 
-.App-header {
-  background-color: rgb(82, 124, 202);
-  height: 50px;
-  padding: 5px;
-  color: white;
+
+.main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+
 }
 
-.App-title {
-  font-size: 1.5em;
-}

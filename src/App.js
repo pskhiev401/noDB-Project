@@ -10,9 +10,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">RocketLabs</h1>
         </header>
-        <Favorites />
         <Launches />
-          
+        <Favorites /> 
       </div>
     );
   }

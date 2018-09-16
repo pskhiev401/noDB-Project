@@ -1,12 +1,6 @@
 .launchCard {
     height: 10vh;
-    width: 55vh;
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
-	align-content: stretch;
+    width: 50vh;
     border: 1px solid grey;
     padding: 10px;
 }
