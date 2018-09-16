@@ -4,14 +4,13 @@
 	color: whitesmoke;
 }
 
-
-.main {
+.main-box {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: stretch;
 	align-content: stretch;
-
+	padding: 20px;
 }
 
