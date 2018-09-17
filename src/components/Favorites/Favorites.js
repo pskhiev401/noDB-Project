@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Linkify from 'react-linkify';
 // import axios from 'axios';
 import './Favorites.css';
 
@@ -15,6 +16,7 @@ class Favorites extends Component{
                         <div>Mission: {element.element.mission_name}</div>
                         <div>Year: {element.element.launch_year}</div>
                         <div>Launch Site: {element.element.launch_site.site_name}</div>
+                        <Linkify><div>Launch Footage: {element.element.links.video_link}</div></Linkify>
                         <br></br>
                         <input placeholder='Rename Rocket'onChange= { (e) => this.props.updateRocketNameFN(e)}></input>
                         <button onClick= { () => this.props.updateHandler(element.element.flight_number) } >Update</button>

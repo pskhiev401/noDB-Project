@@ -19,4 +19,4 @@ app.put('/api/rocket/:id', shipCtlr.updateRocketName);
 
 
 app.listen(port, () => { 
-    console.log(`Server listening on port ${port}`); })
+    console.log(`Server reporting for duty from port ${port}`); })
