@@ -23,10 +23,10 @@ class Launches extends Component{
         let launchList = this.state.launches.map((element, index) => {
             return ( 
                 <div className='launchCard' key={index}>
-                    <div>Launch Year: {element.launch_year}</div>
+                    <div>Year: {element.launch_year}</div>
                     <div>Mission Name: {element.mission_name}</div>
+                    <br></br>
                     <button onClick= {() => this.props.favoritesHandler1(element)}>Add Favorite</button>
-                    {/* <div className='launch_cartoon'><img src= {'https://upload.wikimedia.org/wikipedia/commons/e/e5/Emojione_1F680.svg'} alt='WHOOPS NO IMG'/></div> */}
                 </div>
             )
         })

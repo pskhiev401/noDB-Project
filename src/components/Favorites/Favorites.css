@@ -2,6 +2,25 @@
     border: 1px solid grey;
     padding: 10px;
     display: flex;
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+}
+
+.insideCard{
+    display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	justify-content: center;
+	/* align-items: center; */
+	
+}
+
+.favBox{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 60px;
+}
+
+.favCardImg{
+	size: small;
 }

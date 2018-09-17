@@ -2,17 +2,19 @@
 	text-align: center;
 	background: peru;
 	color: whitesmoke;
-	height: 10vh;
+	height: 8vh;
 	font-size: 3.5em;
+}
+
+body {
+	background: #FAF6E9;
 }
 
 .main-box {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: stretch;
-	align-content: stretch;
+	flex-direction: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
 	padding: 20px;
 }
 
