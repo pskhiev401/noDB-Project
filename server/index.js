@@ -14,8 +14,9 @@ app.post('/api/ships/', shipCtlr.addFaves)
 
 app.get('/api/favorites', shipCtlr.addFaves);
 app.delete('/api/rocket/:id', shipCtlr.deleteRocket);
-// app.put('api/rocket/:id', shipCtlr.updateFaves);
-// ^^^ these 3 arent connected yet
+
+app.put('api/rocket/:id', shipCtlr.updateRocketName);
+
 
 
 app.listen(port, () => { 

@@ -9,12 +9,12 @@ class App extends Component {
     super();
     this.state = {
         favorites: [],
+        userInput: '',
     }
 
 this.favoritesHandler = this.favoritesHandler.bind(this);
+this.updateHandler = this.updateHandler.bind(this);
 }
-
-
 
   componentDidMount(){
     axios.get('/api/favorites/').then(response => {
@@ -23,15 +23,25 @@ this.favoritesHandler = this.favoritesHandler.bind(this);
     })
 } 
   
-
   favoritesHandler(element){
     axios.post('/api/ships', {element}).then(response =>{
-        console.log(response);
+        // console.log(response);
       this.setState({favorites:response.data})
     } )
   }
+
+  updateHandler (id){
+    axios
+    .put(`/api/rocket/${id}`, {name:this.state.userInput})
+    .then(response => {
+      axios.get('/api/favorites').then(response => {
+        console.log('updateHandler from App.js', response);
+        this.setState({favorites: response.data});
+      });
+    });
+  }
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className='App'>
         <header className="App-header">
@@ -40,7 +50,8 @@ this.favoritesHandler = this.favoritesHandler.bind(this);
         <div className='main-box'>
           <Launches favoritesHandler1= {this.favoritesHandler}/>
           <Favorites myfavorites1 = {this.state.favorites}
-            deleteHandler={this.deleteHandler} 
+            deleteHandler={this.deleteHandler}
+            updateHandler={this.updateHandler} 
           /> 
         </div>
         

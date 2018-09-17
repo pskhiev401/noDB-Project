@@ -20,7 +20,7 @@ const getFavorites = (req, res) => {
 const addFaves = (req, res) => {
     // console.log(req.body)
     faves.push(req.body);
-    console.log(faves)
+    // console.log(faves)
     res.status(200).json(faves);
 };
 
@@ -31,14 +31,19 @@ const deleteRocket = (req, res) => {
     res.status(200).json(faves);
 };
 
-// const createComments = (req, res) => {
-
-// },
+const updateRocketName = (req, res) => {
+console.log(req.params);
+console.log(req.body);
+    let updateName = req.params.id;
+    faves.forEach(
+    rocket => rocket.flight_number == updateName ? Object.assign(rocket, req.body): null)
+    res.status(200).json(faves);
+};
 
 module.exports = {
     getLaunches,
     getFavorites,
     addFaves,
-    deleteRocket
-    // updateFaves
+    deleteRocket,
+    updateRocketName
     }

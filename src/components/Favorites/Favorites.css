@@ -1,5 +1,7 @@
 .favoriteCard {
-    width: 55vh;
     border: 1px solid grey;
     padding: 10px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
