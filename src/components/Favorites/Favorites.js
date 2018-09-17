@@ -1,20 +1,9 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './Favorites.css';
 
 class Favorites extends Component{
     
-    deleteHandler (id) {
-        axios.delete(`/api/rocket/${id}`)
-        // .then( () => {
-            // axios.get('/api/favorites').then(response => {
-            //     console.log(response.data)
-            // this.setState( {favorites: response.data})
-            // });
-        // }
-        // );
-    }
-
     render (){
         let favoriteList = this.props.myfavorites1.map((element, index) => {
             // console.log(element)
@@ -25,8 +14,8 @@ class Favorites extends Component{
                     <div>Mission: {element.element.mission_name}</div>
                     <div>Launch Year: {element.element.launch_year}</div>
                     <div>Launch Site: {element.element.launch_site.site_name}</div>
-                    <button onClick= { () => this.deleteHandler(element.element.flight_number) } >Delete</button>
-                    <input placeholder='Rename Rocket'onClick= { () => this.props.updateHandler(element)}></input>
+                    <button onClick= { () => this.props.deleteHandler(element.element.flight_number) } >Delete</button>
+                    <input placeholder='Rename Rocket'onChange= { (e) => this.props.updateRocketNameFN(e)}></input>
                     <button onClick= { () => this.props.updateHandler(element.element.flight_number) } >Update</button>
                 </div>
             )

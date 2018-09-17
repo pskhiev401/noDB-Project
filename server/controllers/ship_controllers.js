@@ -1,7 +1,6 @@
 //This file is used handle the logic for CRUD
 let launchinfo = [];
 let faves = [];
-let id = 0;
 
 const axios = require('axios');
 
@@ -25,7 +24,7 @@ const addFaves = (req, res) => {
 };
 
 const deleteRocket = (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     let deleteIndex = faves.findIndex(launch => launch.element.flight_number == req.params.id);
     faves.splice(deleteIndex, 1);
     res.status(200).json(faves);
@@ -36,7 +35,7 @@ console.log(req.params);
 console.log(req.body);
     let updateName = req.params.id;
     faves.forEach(
-    rocket => rocket.flight_number == updateName ? Object.assign(rocket, req.body): null)
+    rocket => rocket.element.flight_number == updateName ? Object.assign(rocket.element.rocket, req.body): null)
     res.status(200).json(faves);
 };
 

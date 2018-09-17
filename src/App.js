@@ -14,6 +14,8 @@ class App extends Component {
 
 this.favoritesHandler = this.favoritesHandler.bind(this);
 this.updateHandler = this.updateHandler.bind(this);
+this.updateRocketNameFN = this.updateRocketNameFN.bind(this);
+this.deleteHandler= this.deleteHandler.bind(this);
 }
 
   componentDidMount(){
@@ -31,17 +33,33 @@ this.updateHandler = this.updateHandler.bind(this);
   }
 
   updateHandler (id){
-    axios
-    .put(`/api/rocket/${id}`, {name:this.state.userInput})
+    console.log(id)
+    console.log(this.state.userInput)
+    axios.put(`/api/rocket/${id}`, {rocket_name:this.state.userInput})
     .then(response => {
-      axios.get('/api/favorites').then(response => {
-        console.log('updateHandler from App.js', response);
-        this.setState({favorites: response.data});
-      });
+      console.log(response)
+      this.setState({favorites:response.data})
     });
   }
+
+  deleteHandler (id) {
+    axios.delete(`/api/rocket/${id}`)
+        .then( 
+    axios.get('/api/favorites').then(response => {
+    // console.log(response.data)
+    this.setState({favorites: response.data})
+        })
+    
+    );
+}
+
+  updateRocketNameFN (element){
+    this.setState({userInput: element.target.value})
+  } 
+  
   render() {
     // console.log(this.state)
+    console.log(this.state.userInput)
     return (
       <div className='App'>
         <header className="App-header">
@@ -52,6 +70,7 @@ this.updateHandler = this.updateHandler.bind(this);
           <Favorites myfavorites1 = {this.state.favorites}
             deleteHandler={this.deleteHandler}
             updateHandler={this.updateHandler} 
+            updateRocketNameFN={this.updateRocketNameFN}
           /> 
         </div>
         
