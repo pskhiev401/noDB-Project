@@ -2,6 +2,8 @@
 	text-align: center;
 	background: peru;
 	color: whitesmoke;
+	height: 10vh;
+	font-size: 3.5em;
 }
 
 .main-box {
@@ -13,4 +15,6 @@
 	align-content: stretch;
 	padding: 20px;
 }
+
+
 

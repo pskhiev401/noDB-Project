@@ -3,6 +3,7 @@ import './App.css';
 import Launches from './components/Launches/Launches';
 import Favorites from './components/Favorites/Favorites';
 import axios from 'axios';
+import Header from './components/Header/Header';
 
 class App extends Component {
   constructor (){
@@ -62,9 +63,7 @@ this.deleteHandler= this.deleteHandler.bind(this);
     console.log(this.state.userInput)
     return (
       <div className='App'>
-        <header className="App-header">
-          <h1 className="App-title">RocketLabs</h1>
-        </header>
+        <header className='App-header'> <Header /></header>
         <div className='main-box'>
           <Launches favoritesHandler1= {this.favoritesHandler}/>
           <Favorites myfavorites1 = {this.state.favorites}

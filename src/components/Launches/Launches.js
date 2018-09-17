@@ -18,8 +18,6 @@ class Launches extends Component{
         })
     } 
 
-
-
     render (){
         // console.log(this.state.favorites)
         let launchList = this.state.launches.map((element, index) => {
